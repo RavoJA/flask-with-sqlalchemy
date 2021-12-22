@@ -12,6 +12,10 @@ app.config.from_object(Config)
 
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy(app)
+from models import Product
+
+from flask_migrate import Migrate
+migrate = Migrate(app, db)
 
 @app.route('/hello', methods=['GET'])
 def hello():
